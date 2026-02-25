@@ -1,0 +1,27 @@
+---
+title: "Homework 3"
+author: "Sophie Pardehpoosh"
+format: html
+---
+
+# github repository: https://github.com/spardehpoosh/ENVS-193DS_homework-03.git
+
+# Set up
+
+```{r}
+#| label: reading in packages
+#| message: false
+
+library(tidyverse) # general use
+library(janitor) # cleaning data frames
+library(here) # file/folder organization
+library(readxl) # reading .xlsx files
+
+```
+
+
+
+
+
+
+
