@@ -9,7 +9,7 @@ format: html
 # Set up
 
 ```{r}
-#| label: reading in packages
+#| label: reading in packages and data
 #| message: false
 
 library(tidyverse) # general use
@@ -17,6 +17,9 @@ library(janitor) # cleaning data frames
 library(here) # file/folder organization
 library(readxl) # reading .xlsx files
 
+# reading in data
+salinity <- read_csv(here("data", "salinity-pickleweed.csv")) # storing salinity pickleweed data as an object called salinity
+personal_data <- read_csv(here("data", "personal_data.csv")) # storing personal data as an object called personal_data
 ```
 
 
