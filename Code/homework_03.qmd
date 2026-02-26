@@ -19,10 +19,78 @@ library(readxl) # reading .xlsx files
 
 # reading in data
 salinity <- read_csv(here("data", "salinity-pickleweed.csv")) # storing salinity pickleweed data as an object called salinity
-personal_data <- read_csv(here("data", "personal_data.csv")) # storing personal data as an object called personal_data
+reading_data <- read_csv(here("data", "personal_data.csv")) # storing personal data as an object called reading_data
 ```
 
 
+# Problem 1. Slough soil salinity
+
+## a. An apropriate test
+
+
+
+## b. Create visualization 
+
+```{r}
+#| label: salinity scatterplot
+#| message: false
+
+# base layer: ggplot
+ggplot(data = salinity, # using salinity data set for plot
+       aes(x = salinity_mS_cm, # x-axis predictor - soil salinity
+           y = pickleweed)) + # y-axis response - California pickleweed biomass
+  geom_point(size = 4, # changing size of individual points
+             stroke = 1, # making outline of points thickness 1
+             fill = "magenta", # changing color of individual points
+             shape = 21) + # changing shape of individual points
+  theme_minimal() # changing theme from ggplot default
+```
+
+
+## c. Check assumptions and run the test
+
+## d. Results communication 
+
+## e. Test implications
+
+## f. Double check your work
+
+
+# Problem 2. Personal data 
+
+## a. Updating your visualizations 
+
+## b. Captions
+
+
+# Problem 3. Affective visualization 
+
+## a. Description of visualization
+
+
+## b. Sketch of visualization
+
+
+## c. Draft of visualization 
+
+## d. Artist statement
+
+
+## e. Prep materials to share in class
+
+
+# Problem 4. Statistical critique
+
+## a. Revisit and summarize
+
+
+## b. Visual clarity
+
+
+## c. Aesthetic clarity
+
+
+## d. Recommendations
 
 
 

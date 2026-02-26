@@ -119,8 +119,89 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># reading in data</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>salinity <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"salinity-pickleweed.csv"</span>)) <span class="co"># storing salinity pickleweed data as an object called salinity</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>personal_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"personal_data.csv"</span>)) <span class="co"># storing personal data as an object called personal_data</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>reading_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"personal_data.csv"</span>)) <span class="co"># storing personal data as an object called reading_data</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
+<section id="problem-1.-slough-soil-salinity" class="level1">
+<h1>Problem 1. Slough soil salinity</h1>
+<section id="a.-an-apropriate-test" class="level2">
+<h2 class="anchored" data-anchor-id="a.-an-apropriate-test">a. An apropriate test</h2>
+</section>
+<section id="b.-create-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="b.-create-visualization">b. Create visualization</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base layer: ggplot</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> salinity, <span class="co"># using salinity data set for plot</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> salinity_mS_cm, <span class="co"># x-axis predictor - soil salinity</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> pickleweed)) <span class="sc">+</span> <span class="co"># y-axis response - California pickleweed biomass</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="co"># changing size of individual points</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">stroke =</span> <span class="dv">1</span>, <span class="co"># making outline of points thickness 1</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> <span class="st">"magenta"</span>, <span class="co"># changing color of individual points</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> <span class="dv">21</span>) <span class="sc">+</span> <span class="co"># changing shape of individual points</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="co"># changing theme from ggplot default</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="homework_03_files/figure-html/salinity%20scatterplot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="c.-check-assumptions-and-run-the-test" class="level2">
+<h2 class="anchored" data-anchor-id="c.-check-assumptions-and-run-the-test">c.&nbsp;Check assumptions and run the test</h2>
+</section>
+<section id="d.-results-communication" class="level2">
+<h2 class="anchored" data-anchor-id="d.-results-communication">d.&nbsp;Results communication</h2>
+</section>
+<section id="e.-test-implications" class="level2">
+<h2 class="anchored" data-anchor-id="e.-test-implications">e. Test implications</h2>
+</section>
+<section id="f.-double-check-your-work" class="level2">
+<h2 class="anchored" data-anchor-id="f.-double-check-your-work">f.&nbsp;Double check your work</h2>
+</section>
+</section>
+<section id="problem-2.-personal-data" class="level1">
+<h1>Problem 2. Personal data</h1>
+<section id="a.-updating-your-visualizations" class="level2">
+<h2 class="anchored" data-anchor-id="a.-updating-your-visualizations">a. Updating your visualizations</h2>
+</section>
+<section id="b.-captions" class="level2">
+<h2 class="anchored" data-anchor-id="b.-captions">b. Captions</h2>
+</section>
+</section>
+<section id="problem-3.-affective-visualization" class="level1">
+<h1>Problem 3. Affective visualization</h1>
+<section id="a.-description-of-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="a.-description-of-visualization">a. Description of visualization</h2>
+</section>
+<section id="b.-sketch-of-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="b.-sketch-of-visualization">b. Sketch of visualization</h2>
+</section>
+<section id="c.-draft-of-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="c.-draft-of-visualization">c.&nbsp;Draft of visualization</h2>
+</section>
+<section id="d.-artist-statement" class="level2">
+<h2 class="anchored" data-anchor-id="d.-artist-statement">d.&nbsp;Artist statement</h2>
+</section>
+<section id="e.-prep-materials-to-share-in-class" class="level2">
+<h2 class="anchored" data-anchor-id="e.-prep-materials-to-share-in-class">e. Prep materials to share in class</h2>
+</section>
+</section>
+<section id="problem-4.-statistical-critique" class="level1">
+<h1>Problem 4. Statistical critique</h1>
+<section id="a.-revisit-and-summarize" class="level2">
+<h2 class="anchored" data-anchor-id="a.-revisit-and-summarize">a. Revisit and summarize</h2>
+</section>
+<section id="b.-visual-clarity" class="level2">
+<h2 class="anchored" data-anchor-id="b.-visual-clarity">b. Visual clarity</h2>
+</section>
+<section id="c.-aesthetic-clarity" class="level2">
+<h2 class="anchored" data-anchor-id="c.-aesthetic-clarity">c.&nbsp;Aesthetic clarity</h2>
+</section>
+<section id="d.-recommendations" class="level2">
+<h2 class="anchored" data-anchor-id="d.-recommendations">d.&nbsp;Recommendations</h2>
+</section>
 </section>
 
 </main>
