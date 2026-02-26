@@ -1,10 +1,16 @@
 ---
 title: "Homework 3"
 author: "Sophie Pardehpoosh"
-format: html
+date: "2026-02-26"
+format:
+  html:
+    toc: true # use this to display a table of contents
+execute:
+  message: false # use this to make sure messages don't show up
+  warning: false # use this to make sure warnings don't show up
 ---
 
-# github repository: https://github.com/spardehpoosh/ENVS-193DS_homework-03.git
+## Github repository: https://github.com/spardehpoosh/ENVS-193DS_homework-03.git
 
 # Set up
 
@@ -48,6 +54,10 @@ ggplot(data = salinity, # using salinity data set for plot
 
 
 ## c. Check assumptions and run the test
+
+## Check 
+
+## Run the test
 
 ## d. Results communication 
 

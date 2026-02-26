@@ -1,4 +1,18 @@
 # ENVS-193DS_homework-03
+Homework 03
 
-rendered doc: https://spardehpoosh.github.io/ENVS-193DS_homework-03/Code/homework_03.html   
-Repo for homework 3 for ENVS 193DS
+## General information
+
+What is this repo for?
+
+Whose repo is it? Who is contributing to it?
+
+## Data and file information
+
+What files are there?
+
+What code is there, and what does it do?
+
+## https://spardehpoosh.github.io/ENVS-193DS_homework-03/Code/homework_03.html
+
+Link to the rendered output
