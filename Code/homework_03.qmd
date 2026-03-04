@@ -187,19 +187,21 @@ Visualization of temperature (continuous predictor variable) vs reading duration
 ggplot(data = reading_data_clean, # starting with my data clean
        aes(x = average_daily_temperature_c, # average daily temperature on the x axis
            y = duration_minutes)) +  # reading duration on the y axis
-  geom_point(color = "seagreen1") + # changing the color of the points
+  geom_point(color = "firebrick4") + # changing the color of the points
   labs(
     x = "Average Daily Temperature (C)", # changing x-axis label
     y = "Reading Duration (minutes)", # changing y-axis label
     title = "No Evident Relationship Between   
     Average Daily Temperature and Reading Duration" # creating a title for my plot
   ) +
-  theme_dark() # changing the ggplot theme to dark
+  theme_minimal() # changing the ggplot theme to dark
 ```
 
 ## b. Captions
 
+**Figure 1: There is no obvious difference in central tendancies of reading duration on school days vs non school days** Median line is shown for the reading duration on non school days (green) and school days (pink). Upper and lower quartiles are shown above and below the median respectivley. Points represent individual observations of reading duration on non school days (green) and school days (pink). Source: personal data collected by me, Sophie Pardehpoosh
 
+**Figure 2: There is no obvious relationship between average daily temperature and reading duration** Red points represent individual observations of reading duration vs the average temperature that day.  Source: personal data collected by me, Sophie Pardehpoosh
 
 # Problem 3. Affective visualization 
 
