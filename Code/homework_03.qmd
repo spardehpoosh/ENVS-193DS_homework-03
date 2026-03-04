@@ -33,7 +33,7 @@ reading_data <- read_csv(here("data", "personal_data.csv")) # storing personal d
 
 ## a. An apropriate test
 
-
+To test the strength of the relationship between salinity and California pickleweed biomass, I would use Pearson's correlation or Spearman's Rank. Pearsons' correlation is the parametric version to measure the strength of a linear relationship. In contrast, Spearman rank correlation is the non-parametric version and tests for a monotonic relationship based on ranks between variables. Pearson's correlation requires an approximately normal distribution and continous variables while Spearman's rank does not have this requirement. 
 
 ## b. Create visualization 
 
@@ -49,13 +49,20 @@ ggplot(data = salinity, # using salinity data set for plot
              stroke = 1, # making outline of points thickness 1
              fill = "magenta", # changing color of individual points
              shape = 21) + # changing shape of individual points
+  labs(x = "Soil Salinity (mS/cm)", 
+       y = "California pickleweed biomass (g)",
+       title = "As soil salinity (mS/cm) increases, California pickleweed biomass (g) increases") + # adding title
   theme_minimal() # changing theme from ggplot default
 ```
 
 
 ## c. Check assumptions and run the test
 
-## Check 
+## Checks for Pearson's correlation
+
+Based on the graph in part 1b, there seems to be a linear relationship between soil salinity (mS/cm) and California pickleweed biomass (g). 
+
+
 
 ## Run the test
 

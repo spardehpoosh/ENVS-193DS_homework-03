@@ -91,7 +91,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#a.-an-apropriate-test" id="toc-a.-an-apropriate-test" class="nav-link" data-scroll-target="#a.-an-apropriate-test">a. An apropriate test</a></li>
   <li><a href="#b.-create-visualization" id="toc-b.-create-visualization" class="nav-link" data-scroll-target="#b.-create-visualization">b. Create visualization</a></li>
   <li><a href="#c.-check-assumptions-and-run-the-test" id="toc-c.-check-assumptions-and-run-the-test" class="nav-link" data-scroll-target="#c.-check-assumptions-and-run-the-test">c.&nbsp;Check assumptions and run the test</a></li>
-  <li><a href="#check" id="toc-check" class="nav-link" data-scroll-target="#check">Check</a></li>
+  <li><a href="#checks-for-pearsons-correlation" id="toc-checks-for-pearsons-correlation" class="nav-link" data-scroll-target="#checks-for-pearsons-correlation">Checks for Pearson’s correlation</a></li>
   <li><a href="#run-the-test" id="toc-run-the-test" class="nav-link" data-scroll-target="#run-the-test">Run the test</a></li>
   <li><a href="#d.-results-communication" id="toc-d.-results-communication" class="nav-link" data-scroll-target="#d.-results-communication">d.&nbsp;Results communication</a></li>
   <li><a href="#e.-test-implications" id="toc-e.-test-implications" class="nav-link" data-scroll-target="#e.-test-implications">e. Test implications</a></li>
@@ -173,6 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Problem 1. Slough soil salinity</h1>
 <section id="a.-an-apropriate-test" class="level2">
 <h2 class="anchored" data-anchor-id="a.-an-apropriate-test">a. An apropriate test</h2>
+<p>To test the strength of the relationship between salinity and California pickleweed biomass, I would use Pearson’s correlation or Spearman’s Rank. Pearsons’ correlation is the parametric version to measure the strength of a linear relationship. In contrast, Spearman rank correlation is the non-parametric version and tests for a monotonic relationship based on ranks between variables. Pearson’s correlation requires an approximately normal distribution and continous variables while Spearman’s rank does not have this requirement.</p>
 </section>
 <section id="b.-create-visualization" class="level2">
 <h2 class="anchored" data-anchor-id="b.-create-visualization">b. Create visualization</h2>
@@ -185,7 +186,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">stroke =</span> <span class="dv">1</span>, <span class="co"># making outline of points thickness 1</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> <span class="st">"magenta"</span>, <span class="co"># changing color of individual points</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> <span class="dv">21</span>) <span class="sc">+</span> <span class="co"># changing shape of individual points</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="co"># changing theme from ggplot default</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Soil Salinity (mS/cm)"</span>, </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"California pickleweed biomass (g)"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"As soil salinity (mS/cm) increases, California pickleweed biomass (g) increases"</span>) <span class="sc">+</span> <span class="co"># adding title</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="co"># changing theme from ggplot default</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -198,8 +202,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="c.-check-assumptions-and-run-the-test" class="level2">
 <h2 class="anchored" data-anchor-id="c.-check-assumptions-and-run-the-test">c.&nbsp;Check assumptions and run the test</h2>
 </section>
-<section id="check" class="level2">
-<h2 class="anchored" data-anchor-id="check">Check</h2>
+<section id="checks-for-pearsons-correlation" class="level2">
+<h2 class="anchored" data-anchor-id="checks-for-pearsons-correlation">Checks for Pearson’s correlation</h2>
+<p>Based on the graph in part 1b, there seems to be a linear relationship between soil salinity (mS/cm) and California pickleweed biomass (g).</p>
 </section>
 <section id="run-the-test" class="level2">
 <h2 class="anchored" data-anchor-id="run-the-test">Run the test</h2>
