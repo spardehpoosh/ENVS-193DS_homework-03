@@ -58,15 +58,69 @@ ggplot(data = salinity, # using salinity data set for plot
 
 ## c. Check assumptions and run the test
 
-## Checks for Pearson's correlation
+### Check assumptions for Pearson's correlation
 
-Based on the graph in part 1b, there seems to be a linear relationship between soil salinity (mS/cm) and California pickleweed biomass (g). 
+Both variables are assumed to be continuous by study design. 
 
+Based on the scatterplot in part 1b, there seems to be a linear relationship between soil salinity (mS/cm) and California pickleweed biomass (g). 
 
+#### Model fitting: 
+```{r}
+#| label: model fitting
 
-## Run the test
+salinity_model <- lm(
+  pickleweed ~ salinity_mS_cm, # formula: change in California pickleweed biomass (g) as a function of soil salinity (mS/cm)
+  data = salinity) # salinity dataset
+
+```
+
+#### Diagnostics 
+```{r}
+#| label: diagnostics
+
+par(mfrow = c(2, 2)) # display residual plots in 2x2 grid
+plot(salinity_model) # plot residuals
+
+```
+We evaluated model assumptions visually. For homoscedasticity of residuals we used Residuals vs. Fitted and Scale-Location plots. For normality of residuals we used QQ plots. Based on our diagnostics, there were no major deviations from homoscedasticity or normality of residuals. There were also no outliers that might influence model estimates or predictions.
+
+#### Normality
+```{r}
+#| label: qqplot for pickleweed biomass
+#base layer: ggplot
+ggplot(data = salinity, # starting with the clean lobsters data frame
+       aes(sample = salinity_mS_cm, # y-axis for gg plot
+           )) + 
+  geom_qq_line(color = "maroon4") + # reference line in maroon
+  geom_qq() + # points on qqplot
+  theme(legend.position = "none") # removing the legend
+```
+
+```{r}
+#| label: qqplot for pickleweed
+#base layer: ggplot
+ggplot(data = salinity, # starting with the clean lobsters data frame
+       aes(sample = pickleweed, # y-axis for gg plot
+           )) + 
+  geom_qq_line(color = "maroon4") + # reference line in maroon
+  geom_qq() + # points on qqplot
+  theme(legend.position = "none") # removing the legend
+```
+
+Looking at the qqplot, it seems as soil salinity and pickle weed biomass are normally distributed because the points on both QQplot follow the straight line, especially in the middle of the line
+
+### Run the test
+
+```{r}
+#| label: running the test
+
+cor.test(salinity$salinity_mS_cm, salinity$pickleweed, method = "pearson") # pearsons test for strength of relationship between salinity and pickleweed biomass
+
+```
 
 ## d. Results communication 
+
+
 
 ## e. Test implications
 

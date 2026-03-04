@@ -90,9 +90,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#a.-an-apropriate-test" id="toc-a.-an-apropriate-test" class="nav-link" data-scroll-target="#a.-an-apropriate-test">a. An apropriate test</a></li>
   <li><a href="#b.-create-visualization" id="toc-b.-create-visualization" class="nav-link" data-scroll-target="#b.-create-visualization">b. Create visualization</a></li>
-  <li><a href="#c.-check-assumptions-and-run-the-test" id="toc-c.-check-assumptions-and-run-the-test" class="nav-link" data-scroll-target="#c.-check-assumptions-and-run-the-test">c.&nbsp;Check assumptions and run the test</a></li>
-  <li><a href="#checks-for-pearsons-correlation" id="toc-checks-for-pearsons-correlation" class="nav-link" data-scroll-target="#checks-for-pearsons-correlation">Checks for Pearson’s correlation</a></li>
+  <li><a href="#c.-check-assumptions-and-run-the-test" id="toc-c.-check-assumptions-and-run-the-test" class="nav-link" data-scroll-target="#c.-check-assumptions-and-run-the-test">c.&nbsp;Check assumptions and run the test</a>
+  <ul class="collapse">
+  <li><a href="#check-assumptions-for-pearsons-correlation" id="toc-check-assumptions-for-pearsons-correlation" class="nav-link" data-scroll-target="#check-assumptions-for-pearsons-correlation">Check assumptions for Pearson’s correlation</a></li>
   <li><a href="#run-the-test" id="toc-run-the-test" class="nav-link" data-scroll-target="#run-the-test">Run the test</a></li>
+  </ul></li>
   <li><a href="#d.-results-communication" id="toc-d.-results-communication" class="nav-link" data-scroll-target="#d.-results-communication">d.&nbsp;Results communication</a></li>
   <li><a href="#e.-test-implications" id="toc-e.-test-implications" class="nav-link" data-scroll-target="#e.-test-implications">e. Test implications</a></li>
   <li><a href="#f.-double-check-your-work" id="toc-f.-double-check-your-work" class="nav-link" data-scroll-target="#f.-double-check-your-work">f.&nbsp;Double check your work</a></li>
@@ -201,13 +203,89 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="c.-check-assumptions-and-run-the-test" class="level2">
 <h2 class="anchored" data-anchor-id="c.-check-assumptions-and-run-the-test">c.&nbsp;Check assumptions and run the test</h2>
+<section id="check-assumptions-for-pearsons-correlation" class="level3">
+<h3 class="anchored" data-anchor-id="check-assumptions-for-pearsons-correlation">Check assumptions for Pearson’s correlation</h3>
+<p>Both variables are assumed to be continuous by study design.</p>
+<p>Based on the scatterplot in part 1b, there seems to be a linear relationship between soil salinity (mS/cm) and California pickleweed biomass (g).</p>
+<section id="model-fitting" class="level4">
+<h4 class="anchored" data-anchor-id="model-fitting">Model fitting:</h4>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>salinity_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  pickleweed <span class="sc">~</span> salinity_mS_cm, <span class="co"># formula: change in California pickleweed biomass (g) as a function of soil salinity (mS/cm)</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> salinity) <span class="co"># salinity dataset</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
-<section id="checks-for-pearsons-correlation" class="level2">
-<h2 class="anchored" data-anchor-id="checks-for-pearsons-correlation">Checks for Pearson’s correlation</h2>
-<p>Based on the graph in part 1b, there seems to be a linear relationship between soil salinity (mS/cm) and California pickleweed biomass (g).</p>
+<section id="diagnostics" class="level4">
+<h4 class="anchored" data-anchor-id="diagnostics">Diagnostics</h4>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>)) <span class="co"># display residual plots in 2x2 grid</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(salinity_model) <span class="co"># plot residuals</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="homework_03_files/figure-html/diagnostics-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We evaluated model assumptions visually. For homoscedasticity of residuals we used Residuals vs.&nbsp;Fitted and Scale-Location plots. For normality of residuals we used QQ plots. Based on our diagnostics, there were no major deviations from homoscedasticity or normality of residuals. There were also no outliers that might influence model estimates or predictions.</p>
 </section>
-<section id="run-the-test" class="level2">
-<h2 class="anchored" data-anchor-id="run-the-test">Run the test</h2>
+<section id="normality" class="level4">
+<h4 class="anchored" data-anchor-id="normality">Normality</h4>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#base layer: ggplot</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> salinity, <span class="co"># starting with the clean lobsters data frame</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">sample =</span> salinity_mS_cm, <span class="co"># y-axis for gg plot</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>           )) <span class="sc">+</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_qq_line</span>(<span class="at">color =</span> <span class="st">"maroon4"</span>) <span class="sc">+</span> <span class="co"># reference line in maroon</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_qq</span>() <span class="sc">+</span> <span class="co"># points on qqplot</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="co"># removing the legend</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="homework_03_files/figure-html/qqplot%20for%20pickleweed%20biomass-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#base layer: ggplot</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> salinity, <span class="co"># starting with the clean lobsters data frame</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">sample =</span> pickleweed, <span class="co"># y-axis for gg plot</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>           )) <span class="sc">+</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_qq_line</span>(<span class="at">color =</span> <span class="st">"maroon4"</span>) <span class="sc">+</span> <span class="co"># reference line in maroon</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_qq</span>() <span class="sc">+</span> <span class="co"># points on qqplot</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="co"># removing the legend</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="homework_03_files/figure-html/qqplot%20for%20pickleweed-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Looking at the qqplot, it seems as soil salinity and pickle weed biomass are normally distributed because the points on both QQplot follow the straight line, especially in the middle of the line</p>
+</section>
+</section>
+<section id="run-the-test" class="level3">
+<h3 class="anchored" data-anchor-id="run-the-test">Run the test</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(salinity<span class="sc">$</span>salinity_mS_cm, salinity<span class="sc">$</span>pickleweed, <span class="at">method =</span> <span class="st">"pearson"</span>) <span class="co"># pearsons test for strength of relationship between salinity and pickleweed biomass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's product-moment correlation
+
+data:  salinity$salinity_mS_cm and salinity$pickleweed
+t = 2.8979, df = 21, p-value = 0.008605
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.1568265 0.7757682
+sample estimates:
+      cor 
+0.5344778 </code></pre>
+</div>
+</div>
+</section>
 </section>
 <section id="d.-results-communication" class="level2">
 <h2 class="anchored" data-anchor-id="d.-results-communication">d.&nbsp;Results communication</h2>
