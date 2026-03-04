@@ -73,6 +73,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="homework_03_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="homework_03_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -264,13 +293,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Looking at the qqplot, it seems as soil salinity and pickle weed biomass are normally distributed because the points on both QQplot follow the straight line, especially in the middle of the line</p>
+<p>Looking at the qqplots, it seems as soil salinity and pickle weed biomass are approximately normally distributed because the points on both QQplot follow the straight line, especially in the middle of the line</p>
 </section>
 </section>
 <section id="run-the-test" class="level3">
 <h3 class="anchored" data-anchor-id="run-the-test">Run the test</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(salinity<span class="sc">$</span>salinity_mS_cm, salinity<span class="sc">$</span>pickleweed, <span class="at">method =</span> <span class="st">"pearson"</span>) <span class="co"># pearsons test for strength of relationship between salinity and pickleweed biomass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(salinity<span class="sc">$</span>salinity_mS_cm, salinity<span class="sc">$</span>pickleweed, <span class="at">method =</span> <span class="st">"pearson"</span>) <span class="co"># Pearson's test for strength of relationship between salinity and pickleweed biomass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's product-moment correlation
@@ -289,12 +318,30 @@ sample estimates:
 </section>
 <section id="d.-results-communication" class="level2">
 <h2 class="anchored" data-anchor-id="d.-results-communication">d.&nbsp;Results communication</h2>
+<p>To evaluate the strength of the relationship between pickleweed biomass (g) and soil salinity (mS/cm), I used a Pearson’s correlation because the scatter plot showed linear relationship between the two variables, the qqplots showed approximately normal distributions, and both variables were continuous. We found a moderate relationship between soil salinity and pickleweed biomass (Pearson’s r = 0.53, t(21) = 2.9, p = 0.009, <span class="math inline">\(\alpha\)</span> = 0.05)</p>
 </section>
 <section id="e.-test-implications" class="level2">
 <h2 class="anchored" data-anchor-id="e.-test-implications">e. Test implications</h2>
+<p>The pearson’s correlation test showed a moderate positive relationship between soil salinity and pickleweed biomass indicating as salinity levels increase, so does picklweed biomass. To optimize pickleweed planting success in the future, I recommend finding the optimal range of salinity for pickleweed growth.</p>
 </section>
 <section id="f.-double-check-your-work" class="level2">
 <h2 class="anchored" data-anchor-id="f.-double-check-your-work">f.&nbsp;Double check your work</h2>
+<p>I chose Pearsons’s correlation as the data fit the assumptions, but it would also be possible to use Spearman’s rank.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(salinity<span class="sc">$</span>salinity_mS_cm, salinity<span class="sc">$</span>pickleweed, <span class="at">method =</span> <span class="st">"spearman"</span>) <span class="co"># Spearman's test for strength of relationship between salinity and pickleweed biomass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Spearman's rank correlation rho
+
+data:  salinity$salinity_mS_cm and salinity$pickleweed
+S = 824, p-value = 0.003426
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+      rho 
+0.5928854 </code></pre>
+</div>
+</div>
+<p>Using Spearman’s rank, we also found a moderate relationship between soil salinity and pickleweed biomass (Spearman’s <span class="math inline">\(\rho\)</span> = 0.59, S = 824, P = 0.003, <span class="math inline">\(\alpha\)</span> = 0.05). Both tests would would lead us to reject the null hypothesis that there is no relationship between soil salinity and pickleweed biomass, and rather both show that there is a moderate relationship between these two variables. Pearson’s correlation (r = 0.53, p = 0.009) and Spearman’s rank (<span class="math inline">\(\rho\)</span> = 0.58, p = 0.003), both produced p-values below our significance level <span class="math inline">\(\alpha\)</span> = 0.05 so the null hypothesis would be rejected. While Pearson’s correlation assesed the linear relationship and spearman’s rank assesed the monotmic relationship based on ranks, they both indicate that as soil salinity increases, so does pickleweed biomass.</p>
 </section>
 </section>
 <section id="problem-2.-personal-data" class="level1">
