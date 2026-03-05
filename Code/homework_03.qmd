@@ -60,29 +60,11 @@ ggplot(data = salinity, # using salinity data set for plot
 
 ### Check assumptions for Pearson's correlation
 
+#### Continous Variables
 Both variables are assumed to be continuous by study design. 
 
+#### Linear relationship between variables
 Based on the scatterplot in part 1b, there seems to be a linear relationship between soil salinity (mS/cm) and California pickleweed biomass (g). 
-
-#### Model fitting: 
-```{r}
-#| label: model fitting
-
-salinity_model <- lm(
-  pickleweed ~ salinity_mS_cm, # formula: change in California pickleweed biomass (g) as a function of soil salinity (mS/cm)
-  data = salinity) # salinity dataset
-
-```
-
-#### Diagnostics 
-```{r}
-#| label: diagnostics
-
-par(mfrow = c(2, 2)) # display residual plots in 2x2 grid
-plot(salinity_model) # plot residuals
-
-```
-We evaluated model assumptions visually. For homoscedasticity of residuals we used Residuals vs. Fitted and Scale-Location plots. For normality of residuals we used QQ plots. Based on our diagnostics, there were no major deviations from homoscedasticity or normality of residuals. There were also no outliers that might influence model estimates or predictions.
 
 #### Normality
 ```{r}
@@ -106,7 +88,6 @@ ggplot(data = salinity, # starting with the clean lobsters data frame
   geom_qq() + # points on qqplot
   theme(legend.position = "none") # removing the legend
 ```
-
 Looking at the qqplots, it seems as soil salinity and pickle weed biomass are approximately normally distributed because the points on both QQplot follow the straight line, especially in the middle of the line
 
 ### Run the test
@@ -199,9 +180,9 @@ ggplot(data = reading_data_clean, # starting with my data clean
 
 ## b. Captions
 
-**Figure 1: There is no obvious difference in central tendancies of reading duration on school days vs non school days** Median line is shown for the reading duration on non school days (green) and school days (pink). Upper and lower quartiles are shown above and below the median respectivley. Points represent individual observations of reading duration on non school days (green) and school days (pink). Source: personal data collected by me, Sophie Pardehpoosh
+**Figure 1: There is no obvious difference in central tendancies of reading duration on school days vs non school days.** Median line is shown for the reading duration on non school days (green) and school days (pink). Upper and lower quartiles are shown above and below the median respectivley. Points represent individual observations of reading duration on non school days (green) and school days (pink). Source: personal data collected by me, Sophie Pardehpoosh
 
-**Figure 2: There is no obvious relationship between average daily temperature and reading duration** Red points represent individual observations of reading duration vs the average temperature that day.  Source: personal data collected by me, Sophie Pardehpoosh
+**Figure 2: There is no obvious relationship between average daily temperature and reading duration.** Red points represent individual observations of reading duration vs the average temperature that day.  Source: personal data collected by me, Sophie Pardehpoosh
 
 # Problem 3. Affective visualization 
 
@@ -213,11 +194,12 @@ ggplot(data = reading_data_clean, # starting with my data clean
 
 ## c. Draft of visualization 
 
+
 ## d. Artist statement
 
 
 ## e. Prep materials to share in class
-
+[Google Slides Presentation](https://docs.google.com/presentation/d/1AlU0lExzSd3VYh3XV0Vthh39OBI9zX_CdPrE-ke39aQ/edit?usp=sharing)
 
 # Problem 4. Statistical critique
 
