@@ -131,7 +131,7 @@ reading_data_clean <- reading_data |> # starting with original reading data fram
   
 ```
 
-Visualization of school day (categorical predictor variable) vs reading duration (response variable)
+#### Visualization of school day (categorical predictor variable) vs reading duration (response variable)
 ```{r}
 #| label: School day vs reading duration
 
@@ -159,7 +159,7 @@ ggplot(data = reading_data_clean, # starting with my data clean
 ```
 
 
-Visualization of temperature (continuous predictor variable) vs reading duration (response variable)
+#### Visualization of temperature (continuous predictor variable) vs reading duration (response variable)
 ```{r}
 #| label: Temperature vs reading duration
 
@@ -187,7 +187,7 @@ ggplot(data = reading_data_clean, # starting with my data clean
 
 ## a. Description of visualization
 
-I am planning on drawing a bookshelf with one book for each observation I took. The height of the book will represent the reading duration for that observation, the width will represent number of assignments, and the color will represent the book/author combination of the book from that observation. The shelf will be split into two parts, one for school day, and the other for non-school day. 
+I am planning on drawing a bookshelf with one book for each observation I took. The height of the book will represent the reading duration for that observation, the width will represent number of assignments, and the color will represent the book/author combination of the book from that observation. The shelf will be split into two parts, one for school day, and the other for non-school day.
 
 ## b. Sketch of visualization
 
@@ -197,6 +197,7 @@ I am planning on drawing a bookshelf with one book for each observation I took. 
 
 ## d. Artist statement
 
+I am showing how much I read (in minutes) on school days vs non school days, which book I'm reading, and how many assignments I am working on that day. 
 
 ## e. Prep materials to share in class
 [Google Slides Presentation](https://docs.google.com/presentation/d/1AlU0lExzSd3VYh3XV0Vthh39OBI9zX_CdPrE-ke39aQ/edit?usp=sharing)
@@ -205,6 +206,9 @@ I am planning on drawing a bookshelf with one book for each observation I took. 
 
 ## a. Revisit and summarize
 
+ANOVA or analysis of variance was applied to test the variance in monthly average catch per unit effort (CPUE) according to the taxonomic family of the most abundant fish species in the Lower Amazon region. The predictor variables were the taxonomic families, the fisheries region, the months and years of the fisheries while the response variable was catch per unit effort (CPUE) which represents fishery productivity. 
+
+![Results of ANOVA figure](figure.png)
 
 ## b. Visual clarity
 
