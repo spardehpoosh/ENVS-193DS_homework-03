@@ -45,13 +45,12 @@ To test the strength of the relationship between salinity and California picklew
 ggplot(data = salinity, # using salinity data set for plot
        aes(x = salinity_mS_cm, # x-axis predictor - soil salinity
            y = pickleweed)) + # y-axis response - California pickleweed biomass
-  geom_point(size = 4, # changing size of individual points
-             stroke = 1, # making outline of points thickness 1
-             fill = "magenta", # changing color of individual points
-             shape = 21) + # changing shape of individual points
+  geom_point(size = 2, # changing size of individual points
+             color = "firebrick4") + # changing color of individual points
   labs(x = "Soil Salinity (mS/cm)", 
        y = "California pickleweed biomass (g)",
-       title = "As soil salinity (mS/cm) increases, California pickleweed biomass (g) increases") + # adding title
+       title = "As soil salinity (mS/cm) increases, 
+       California pickleweed biomass (g) increases") + # adding title
   theme_minimal() # changing theme from ggplot default
 ```
 
