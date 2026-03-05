@@ -187,6 +187,7 @@ ggplot(data = reading_data_clean, # starting with my data clean
 
 ## a. Description of visualization
 
+I am planning on drawing a bookshelf with one book for each observation I took. The height of the book will represent the reading duration for that observation, the width will represent number of assignments, and the color will represent the book/author combination of the book from that observation. The shelf will be split into two parts, one for school day, and the other for non-school day. 
 
 ## b. Sketch of visualization
 
