@@ -3,16 +3,18 @@ Homework 03
 
 ## General information
 
-What is this repo for?
+This repo is for ENVS 193DS Homework 03 demonstrating statistical and coding skills learned thus far. 
 
-Whose repo is it? Who is contributing to it?
+This repo belongs to me, Sophie Pardehpoosh and I am the sole contributor. 
 
 ## Data and file information
 
-What files are there?
+The data folder includes salinity-pickleweed.csv which was provided by An Bui in ENVS 193DS, as well as personal_data.csv which I collected myself. 
 
-What code is there, and what does it do?
+The code folder includes homework_03.qmd which contains all code for running a test on picklweed salinity data, and creating updated visualizations for my personal data. 
 
-## https://spardehpoosh.github.io/ENVS-193DS_homework-03/Code/homework_03.html
+## Rendered output
 
-Link to the rendered output
+[The rendered output is here](https://spardehpoosh.github.io/ENVS-193DS_homework-03/Code/homework_03.html)
+
+
