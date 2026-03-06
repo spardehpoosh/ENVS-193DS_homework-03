@@ -191,8 +191,10 @@ I am planning on drawing a bookshelf with one book for each observation I took. 
 
 ## b. Sketch of visualization
 
+![Affective visualization sketch](affective_draft.png)
 
 ## c. Draft of visualization 
+
 
 
 ## d. Artist statement
