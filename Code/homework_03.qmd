@@ -213,6 +213,7 @@ ANOVA or analysis of variance was applied to test the variance in monthly averag
 ## b. Visual clarity
 
 
+
 ## c. Aesthetic clarity
 
 
