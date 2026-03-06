@@ -216,6 +216,7 @@ This figure illustrates the results from the ANOVA tests. The y-axis shows yearl
 
 ## c. Aesthetic clarity
 
+The authors did a good job at handling visual clutter. The data to ink ratio is appropriate as they took out the grid lines and just kept the tick marks along the axes. Since there are different panels for each predictor variable, there is not need for different colors or other elements which they did not include. 
 
 ## d. Recommendations
 
