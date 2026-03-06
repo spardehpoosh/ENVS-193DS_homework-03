@@ -371,21 +371,20 @@ sample estimates:
 </div>
 </div>
 </section>
-<section id="visualization-of-temperature-continuous-predictor-variable-vs-reading-duration-response-variable" class="level4">
-<h4 class="anchored" data-anchor-id="visualization-of-temperature-continuous-predictor-variable-vs-reading-duration-response-variable">Visualization of temperature (continuous predictor variable) vs reading duration (response variable)</h4>
+<section id="visualization-of-start-time-continuous-predictor-variable-vs-reading-duration-response-variable" class="level4">
+<h4 class="anchored" data-anchor-id="visualization-of-start-time-continuous-predictor-variable-vs-reading-duration-response-variable">Visualization of start time (continuous predictor variable) vs reading duration (response variable)</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base layer: ggplot</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> reading_data_clean, <span class="co"># starting with my data clean</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> average_daily_temperature_c, <span class="co"># average daily temperature on the x axis</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> start_time, <span class="co"># average daily temperature on the x axis</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> duration_minutes)) <span class="sc">+</span>  <span class="co"># reading duration on the y axis</span></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"firebrick4"</span>) <span class="sc">+</span> <span class="co"># changing the color of the points</span></span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Average Daily Temperature (C)"</span>, <span class="co"># changing x-axis label</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Time when reading started"</span>, <span class="co"># changing x-axis label</span></span>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Reading Duration (minutes)"</span>, <span class="co"># changing y-axis label</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"No Evident Relationship Between   </span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="st">    Average Daily Temperature and Reading Duration"</span> <span class="co"># creating a title for my plot</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="co"># changing the ggplot theme to dark</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Earlier start times led to longer reading duration"</span> <span class="co"># creating a title for my plot</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="co"># changing the ggplot theme to dark</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -400,7 +399,7 @@ sample estimates:
 <section id="b.-captions" class="level2">
 <h2 class="anchored" data-anchor-id="b.-captions">b. Captions</h2>
 <p><strong>Figure 1: There is no obvious difference in central tendancies of reading duration on school days vs non school days.</strong> Median line is shown for the reading duration on non school days (green) and school days (pink). Upper and lower quartiles are shown above and below the median respectivley. Points represent individual observations of reading duration on non school days (green) and school days (pink). Source: personal data collected by me, Sophie Pardehpoosh</p>
-<p><strong>Figure 2: There is no obvious relationship between average daily temperature and reading duration.</strong> Red points represent individual observations of reading duration vs the average temperature that day. Source: personal data collected by me, Sophie Pardehpoosh</p>
+<p><strong>Figure 2: Reading duration was longer when start time was earlier in the day.</strong> Red points represent individual observations of reading duration vs the time that reading began. Source: personal data collected by me, Sophie Pardehpoosh</p>
 </section>
 </section>
 <section id="problem-3.-affective-visualization" class="level1">
@@ -423,7 +422,7 @@ sample estimates:
 </section>
 <section id="d.-artist-statement" class="level2">
 <h2 class="anchored" data-anchor-id="d.-artist-statement">d.&nbsp;Artist statement</h2>
-<p>I am showing how much I read (in minutes) on school days vs non school days, which book I’m reading, and how many assignments I am working on that day.</p>
+<p>I am showing how much I read (in minutes) on school days vs non school days, which book I’m reading, and how many assignments I am working on that day. I found digital art influenctial for my affective visualization. I have noticed a rise in visual media recently, and wanted to try this to display my personal data. My visualization is drawn and assembled on my tablet with Procreate and Canva. I created this work by drafting components on procreate, and putting them together on canva. Height and width of books were determined using a graph that was removed after.</p>
 </section>
 <section id="e.-prep-materials-to-share-in-class" class="level2">
 <h2 class="anchored" data-anchor-id="e.-prep-materials-to-share-in-class">e. Prep materials to share in class</h2>

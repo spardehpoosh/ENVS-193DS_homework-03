@@ -159,7 +159,7 @@ ggplot(data = reading_data_clean, # starting with my data clean
 ```
 
 
-#### Visualization of temperature (continuous predictor variable) vs reading duration (response variable)
+#### Visualization of start time (continuous predictor variable) vs reading duration (response variable)
 ```{r}
 #| label: Temperature vs reading duration
 
@@ -199,7 +199,7 @@ I am planning on drawing a bookshelf with one book for each observation I took. 
 
 ## d. Artist statement
 
-I am showing how much I read (in minutes) on school days vs non school days, which book I'm reading, and how many assignments I am working on that day. 
+I am showing how much I read (in minutes) on school days vs non school days, which book I'm reading, and how many assignments I am working on that day. I found digital art influenctial for my affective visualization. I have noticed a rise in visual media recently, and wanted to try this to display my personal data. My visualization is drawn and assembled on my tablet with Procreate and Canva. I created this work by drafting components on procreate, and putting them together on canva. Height and width of books were determined using a graph that was removed after. 
 
 ## e. Prep materials to share in class
 [Google Slides Presentation](https://docs.google.com/presentation/d/1AlU0lExzSd3VYh3XV0Vthh39OBI9zX_CdPrE-ke39aQ/edit?usp=sharing)
