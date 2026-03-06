@@ -33,7 +33,7 @@ reading_data <- read_csv(here("data", "personal_data.csv")) # storing personal d
 
 ## a. An apropriate test
 
-To test the strength of the relationship between salinity and California pickleweed biomass, I would use Pearson's correlation or Spearman's Rank. Pearsons' correlation is the parametric version to measure the strength of a linear relationship. In contrast, Spearman rank correlation is the non-parametric version and tests for a monotonic relationship based on ranks between variables. Pearson's correlation requires an approximately normal distribution and continous variables while Spearman's rank does not have this requirement. 
+To test the strength of the relationship between salinity and California pickleweed biomass, I would use Pearson's correlation or Spearman's Rank. Pearsons' correlation is the parametric version to measure the strength of a linear relationship. In contrast, Spearman rank correlation is the non-parametric version and tests for a monotonic relationship based on ranks between variables. Pearson's correlation requires an approximately normal distribution and continous variables while Spearman's rank does not have these requirements. 
 
 ## b. Create visualization 
 
@@ -74,6 +74,7 @@ ggplot(data = salinity, # starting with the clean lobsters data frame
            )) + 
   geom_qq_line(color = "maroon4") + # reference line in maroon
   geom_qq() + # points on qqplot
+  labs(title = "qq plot to assess normality of pickleweed biomass data") + # adding title for qq plot
   theme(legend.position = "none") # removing the legend
 ```
 
@@ -85,6 +86,7 @@ ggplot(data = salinity, # starting with the clean lobsters data frame
            )) + 
   geom_qq_line(color = "maroon4") + # reference line in maroon
   geom_qq() + # points on qqplot
+  labs(title = "qq plot to assess normality of salinity data") + # adding title for qq plot
   theme(legend.position = "none") # removing the legend
 ```
 Looking at the qqplots, it seems as soil salinity and pickle weed biomass are approximately normally distributed because the points on both QQplot follow the straight line, especially in the middle of the line
