@@ -212,7 +212,7 @@ ANOVA or analysis of variance was applied to test the variance in monthly averag
 
 ## b. Visual clarity
 
-
+This figure illustrates the results from the ANOVA tests. The y-axis shows yearly mean catch per unit effort (CPUE). The x-axes is called the "level of factor" where each number represents a different classification of the categorical variables, including taxanomic families and years. The top graphs show rivers, and the bottom show lakes. Panel (a) are for different species, while panel (b) are for different years. This makes sense since the response variable (CPUE) is on the y-axis, and the 4 graphs show different combinations of predictor variables on the y-axis. 
 
 ## c. Aesthetic clarity
 
