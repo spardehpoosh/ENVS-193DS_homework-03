@@ -220,7 +220,7 @@ The authors did a good job at handling visual clutter. The data to ink ratio is 
 
 ## d. Recommendations
 
-
+I would change the label of the y-axis, "XA (level of factor)" because it is not obvious what that means. I would also label that for panel (a), the factor is species while for panel (b) the level is year. I would also consider including summary statistics, likes means with error bars or confidence intervals, but I believe this could add visual clutter and cause a high data to ink ratio. 
 
 
 
