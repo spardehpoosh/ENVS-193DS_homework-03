@@ -6,8 +6,8 @@ format:
   html:
     toc: true # use this to display a table of contents
 execute:
-  message: false # use this to make sure messages don't show up
-  warning: false # use this to make sure warnings don't show up
+  message: false # make sure messages don't show up
+  warning: false # make sure warnings don't show up
 ---
 
 ## Github repository: https://github.com/spardehpoosh/ENVS-193DS_homework-03.git
@@ -33,7 +33,7 @@ reading_data <- read_csv(here("data", "personal_data.csv")) # storing personal d
 
 ## a. An apropriate test
 
-To test the strength of the relationship between salinity and California pickleweed biomass, I would use Pearson's correlation or Spearman's Rank. Pearsons' correlation is the parametric version to measure the strength of a linear relationship. In contrast, Spearman rank correlation is the non-parametric version and tests for a monotonic relationship based on ranks between variables. Pearson's correlation requires an approximately normal distribution and continous variables while Spearman's rank does not have these requirements. 
+To test the strength of the relationship between salinity (mS/cm) and California pickleweed biomass (g), I would use Pearson's correlation or Spearman's Rank. Pearsons' correlation is a parametric test to measure the strength of a linear relationship. In contrast, Spearman rank correlation is the non-parametric version and tests for a monotonic relationship based on ranks between variables. Pearson's correlation requires an approximately normal distribution and continuous variables while Spearman's rank does not have these requirements. 
 
 ## b. Create visualization 
 
@@ -47,7 +47,7 @@ ggplot(data = salinity, # using salinity data set for plot
            y = pickleweed)) + # y-axis response - California pickleweed biomass
   geom_point(size = 2, # changing size of individual points
              color = "firebrick4") + # changing color of individual points
-  labs(x = "Soil Salinity (mS/cm)", 
+  labs(x = "Soil salinity (mS/cm)", 
        y = "California pickleweed biomass (g)",
        title = "As soil salinity (mS/cm) increases, 
        California pickleweed biomass (g) increases") + # adding title
@@ -63,7 +63,7 @@ ggplot(data = salinity, # using salinity data set for plot
 Both variables are assumed to be continuous by study design. 
 
 #### Linear relationship between variables
-Based on the scatterplot in part 1b, there seems to be a linear relationship between soil salinity (mS/cm) and California pickleweed biomass (g). 
+Based on the scatterplot in part 1b, there seems to be a somewhat linear relationship between soil salinity (mS/cm) and California pickleweed biomass (g). 
 
 #### Normality
 ```{r}
@@ -106,7 +106,7 @@ To evaluate the strength of the relationship between pickleweed biomass (g) and 
 
 ## e. Test implications
 
-The pearson's correlation test showed a moderate positive relationship between soil salinity and pickleweed biomass indicating as salinity levels increase, so does picklweed biomass. To optimize pickleweed planting success in the future, I recommend finding the optimal range of salinity for pickleweed growth.
+The pearson's correlation test showed a moderate positive relationship between soil salinity and pickleweed biomass indicating as salinity levels increase, so does picklweed biomass. To optimize pickleweed planting success in the future, I recommend finding the optimal range of salinity for pickleweed growth as I suspect at some point, a very high salinity will no longer promote growth. 
 
 ## f. Double check your work
 
@@ -118,7 +118,7 @@ I chose Pearsons's correlation as the data fit the assumptions, but it would als
 cor.test(salinity$salinity_mS_cm, salinity$pickleweed, method = "spearman") # Spearman's test for strength of relationship between salinity and pickleweed biomass
 ```
 Using Spearman's rank, we also found a moderate relationship between soil salinity and pickleweed biomass (Spearman's $\rho$ = 0.59, S = 824, P = 0.003, $\alpha$ = 0.05). 
-Both tests would would lead us to reject the null hypothesis that there is no relationship between soil salinity and pickleweed biomass, and rather both show that there is a moderate relationship between these two variables. Pearson's correlation (r = 0.53, p = 0.009) and Spearman's rank ($\rho$ = 0.58, p = 0.003), both produced p-values below our significance level $\alpha$ = 0.05 so the null hypothesis would be rejected. While Pearson's correlation assesed the linear relationship and spearman's rank assesed the monotmic relationship based on ranks, they both indicate that as soil salinity increases, so does pickleweed biomass. 
+Both tests would would lead us to reject the null hypothesis that there is no relationship between soil salinity and pickleweed biomass, and rather both show that there is a moderate relationship between these two variables. Pearson's correlation (r = 0.53, p = 0.009) and Spearman's rank ($\rho$ = 0.58, p = 0.003), both produced p-values below our significance level $\alpha$ = 0.05 so the null hypothesis would be rejected. While Pearson's correlation assessed the linear relationship and Spearman's rank assessed the monotomic relationship based on ranks, they both indicate that as soil salinity increases, so does pickleweed biomass. 
 
 # Problem 2. Personal data 
 

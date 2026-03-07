@@ -207,7 +207,7 @@ window.Quarto = {
 <h1>Problem 1. Slough soil salinity</h1>
 <section id="a.-an-apropriate-test" class="level2">
 <h2 class="anchored" data-anchor-id="a.-an-apropriate-test">a. An apropriate test</h2>
-<p>To test the strength of the relationship between salinity and California pickleweed biomass, I would use Pearson’s correlation or Spearman’s Rank. Pearsons’ correlation is the parametric version to measure the strength of a linear relationship. In contrast, Spearman rank correlation is the non-parametric version and tests for a monotonic relationship based on ranks between variables. Pearson’s correlation requires an approximately normal distribution and continous variables while Spearman’s rank does not have these requirements.</p>
+<p>To test the strength of the relationship between salinity (mS/cm) and California pickleweed biomass (g), I would use Pearson’s correlation or Spearman’s Rank. Pearsons’ correlation is a parametric test to measure the strength of a linear relationship. In contrast, Spearman rank correlation is the non-parametric version and tests for a monotonic relationship based on ranks between variables. Pearson’s correlation requires an approximately normal distribution and continuous variables while Spearman’s rank does not have these requirements.</p>
 </section>
 <section id="b.-create-visualization" class="level2">
 <h2 class="anchored" data-anchor-id="b.-create-visualization">b. Create visualization</h2>
@@ -218,7 +218,7 @@ window.Quarto = {
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> pickleweed)) <span class="sc">+</span> <span class="co"># y-axis response - California pickleweed biomass</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="co"># changing size of individual points</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"firebrick4"</span>) <span class="sc">+</span> <span class="co"># changing color of individual points</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Soil Salinity (mS/cm)"</span>, </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Soil salinity (mS/cm)"</span>, </span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"California pickleweed biomass (g)"</span>,</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"As soil salinity (mS/cm) increases, </span></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="st">       California pickleweed biomass (g) increases"</span>) <span class="sc">+</span> <span class="co"># adding title</span></span>
@@ -242,7 +242,7 @@ window.Quarto = {
 </section>
 <section id="linear-relationship-between-variables" class="level4">
 <h4 class="anchored" data-anchor-id="linear-relationship-between-variables">Linear relationship between variables</h4>
-<p>Based on the scatterplot in part 1b, there seems to be a linear relationship between soil salinity (mS/cm) and California pickleweed biomass (g).</p>
+<p>Based on the scatterplot in part 1b, there seems to be a somewhat linear relationship between soil salinity (mS/cm) and California pickleweed biomass (g).</p>
 </section>
 <section id="normality" class="level4">
 <h4 class="anchored" data-anchor-id="normality">Normality</h4>
@@ -309,7 +309,7 @@ sample estimates:
 </section>
 <section id="e.-test-implications" class="level2">
 <h2 class="anchored" data-anchor-id="e.-test-implications">e. Test implications</h2>
-<p>The pearson’s correlation test showed a moderate positive relationship between soil salinity and pickleweed biomass indicating as salinity levels increase, so does picklweed biomass. To optimize pickleweed planting success in the future, I recommend finding the optimal range of salinity for pickleweed growth.</p>
+<p>The pearson’s correlation test showed a moderate positive relationship between soil salinity and pickleweed biomass indicating as salinity levels increase, so does picklweed biomass. To optimize pickleweed planting success in the future, I recommend finding the optimal range of salinity for pickleweed growth as I suspect at some point, a very high salinity will no longer promote growth.</p>
 </section>
 <section id="f.-double-check-your-work" class="level2">
 <h2 class="anchored" data-anchor-id="f.-double-check-your-work">f.&nbsp;Double check your work</h2>
@@ -328,7 +328,7 @@ sample estimates:
 0.5928854 </code></pre>
 </div>
 </div>
-<p>Using Spearman’s rank, we also found a moderate relationship between soil salinity and pickleweed biomass (Spearman’s <span class="math inline">\(\rho\)</span> = 0.59, S = 824, P = 0.003, <span class="math inline">\(\alpha\)</span> = 0.05). Both tests would would lead us to reject the null hypothesis that there is no relationship between soil salinity and pickleweed biomass, and rather both show that there is a moderate relationship between these two variables. Pearson’s correlation (r = 0.53, p = 0.009) and Spearman’s rank (<span class="math inline">\(\rho\)</span> = 0.58, p = 0.003), both produced p-values below our significance level <span class="math inline">\(\alpha\)</span> = 0.05 so the null hypothesis would be rejected. While Pearson’s correlation assesed the linear relationship and spearman’s rank assesed the monotmic relationship based on ranks, they both indicate that as soil salinity increases, so does pickleweed biomass.</p>
+<p>Using Spearman’s rank, we also found a moderate relationship between soil salinity and pickleweed biomass (Spearman’s <span class="math inline">\(\rho\)</span> = 0.59, S = 824, P = 0.003, <span class="math inline">\(\alpha\)</span> = 0.05). Both tests would would lead us to reject the null hypothesis that there is no relationship between soil salinity and pickleweed biomass, and rather both show that there is a moderate relationship between these two variables. Pearson’s correlation (r = 0.53, p = 0.009) and Spearman’s rank (<span class="math inline">\(\rho\)</span> = 0.58, p = 0.003), both produced p-values below our significance level <span class="math inline">\(\alpha\)</span> = 0.05 so the null hypothesis would be rejected. While Pearson’s correlation assessed the linear relationship and Spearman’s rank assessed the monotomic relationship based on ranks, they both indicate that as soil salinity increases, so does pickleweed biomass.</p>
 </section>
 </section>
 <section id="problem-2.-personal-data" class="level1">
@@ -421,6 +421,12 @@ sample estimates:
 </section>
 <section id="c.-draft-of-visualization" class="level2">
 <h2 class="anchored" data-anchor-id="c.-draft-of-visualization">c.&nbsp;Draft of visualization</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="draft.png" class="img-fluid figure-img"></p>
+<figcaption>Affective visualization draft</figcaption>
+</figure>
+</div>
 </section>
 <section id="d.-artist-statement" class="level2">
 <h2 class="anchored" data-anchor-id="d.-artist-statement">d.&nbsp;Artist statement</h2>
